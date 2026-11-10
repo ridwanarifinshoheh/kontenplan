@@ -1,5 +1,7 @@
 name: Build KontenPlan (.exe & .dmg)
 
+# Jalan otomatis saat kamu push tag versi (misal v1.0.0),
+# atau manual lewat tab "Actions" → "Run workflow".
 on:
   workflow_dispatch:
   push:
