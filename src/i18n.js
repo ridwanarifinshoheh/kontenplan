@@ -31,7 +31,18 @@ window.I18N = {
     welcome_title: 'Selamat datang di KontenPlan', welcome_sub: 'Supaya tim bisa bekerja bersama, pilih dulu folder bersama dan isi namamu.', start: 'Mulai',
     conflict: 'Konten ini baru saja diubah oleh {name}. Timpa dengan versimu?', conflict_overwrite: 'Timpa', conflict_reload: 'Muat versi terbaru',
     synced: 'Data diperbarui dari tim', updated_by: 'Diubah oleh', empty: 'Belum ada konten. Klik "Konten baru" untuk mulai.',
-    unassigned: 'Tanpa PIC', untitled: 'Tanpa judul', items_count: '{n} konten'
+    unassigned: 'Tanpa PIC', untitled: 'Tanpa judul', items_count: '{n} konten',
+    nav_dashboard: 'Dashboard', theme_light: 'Terang', theme_dark: 'Gelap', export_data: 'Ekspor data', export: 'Ekspor', notifications: 'Notifikasi',
+    hello: 'Hai, {name}!', hello_anon: 'Hai!', hero_q: 'Apa rencana kontenmu hari ini?', hero_sub: 'Rencanakan, produksi, dan jadwalkan video & poster bersama tim dalam satu tempat.',
+    feat_video_t: 'Video baru', feat_video_s: 'Script & storyboard', feat_poster_t: 'Poster baru', feat_poster_s: 'Brief & desain', feat_ai_t: 'Ide dari AI', feat_ai_s: 'Biar AI yang brainstorming',
+    activity: 'Aktivitas tim', mark_read: 'Tandai dibaca', mark_all_read: 'Tandai semua dibaca', no_activity: 'Belum ada aktivitas.', edited: 'mengubah',
+    my_tasks: 'Tugas saya', no_tasks: 'Belum ada konten yang ditugaskan ke kamu.', more_tasks: '+{n} tugas lainnya', see_all: 'Lihat semua',
+    overdue: 'Terlambat', tomorrow: 'Besok', no_schedule_day: 'Tidak ada jadwal di tanggal ini.', schedule_one: 'Jadwalkan konten',
+    deadlines: 'Tenggat terdekat', no_deadlines: 'Tidak ada tenggat. Jadwalkan konten di Kalender.',
+    ai_card_s: 'Dapatkan ide, hook, script, dan caption dalam hitungan detik.', try_now: 'Coba sekarang', connect_ai: 'Hubungkan AI',
+    this_month: 'Bulan ini', published_n: 'Terbit {a}/{b}', all_published: 'Semua sudah terbit!', n_left: '{n} belum terbit', none_this_month: 'Belum ada jadwal bulan ini', check: 'Cek',
+    next_up: 'Konten berikutnya', open: 'Buka', reschedule: 'Ubah jadwal', no_next: 'Belum ada konten terjadwal.',
+    cal_sub: 'Geser konten ke tanggal lain untuk menjadwal ulang.', board_sub: 'Geser kartu untuk mengubah status.'
   },
   en: {
     langName: 'English',
@@ -64,7 +75,18 @@ window.I18N = {
     welcome_title: 'Welcome to KontenPlan', welcome_sub: 'So your team can work together, first choose the shared folder and enter your name.', start: 'Start',
     conflict: 'This content was just changed by {name}. Overwrite with your version?', conflict_overwrite: 'Overwrite', conflict_reload: 'Load latest version',
     synced: 'Updated from your team', updated_by: 'Edited by', empty: 'No content yet. Click "New content" to start.',
-    unassigned: 'Unassigned', untitled: 'Untitled', items_count: '{n} items'
+    unassigned: 'Unassigned', untitled: 'Untitled', items_count: '{n} items',
+    nav_dashboard: 'Dashboard', theme_light: 'Light', theme_dark: 'Dark', export_data: 'Export data', export: 'Export', notifications: 'Notifications',
+    hello: 'Hi, {name}!', hello_anon: 'Hi there!', hero_q: 'What are your content plans for today?', hero_sub: 'Plan, produce and schedule videos & posters with your team in one place.',
+    feat_video_t: 'New video', feat_video_s: 'Script & storyboard', feat_poster_t: 'New poster', feat_poster_s: 'Brief & design', feat_ai_t: 'Ideas from AI', feat_ai_s: 'Let AI brainstorm for you',
+    activity: 'Team activity', mark_read: 'Mark as read', mark_all_read: 'Mark all as read', no_activity: 'No activity yet.', edited: 'edited',
+    my_tasks: 'My tasks', no_tasks: 'Nothing is assigned to you yet.', more_tasks: '+{n} more tasks', see_all: 'See all',
+    overdue: 'Overdue', tomorrow: 'Tomorrow', no_schedule_day: 'Nothing scheduled on this day.', schedule_one: 'Schedule content',
+    deadlines: 'Upcoming deadlines', no_deadlines: 'No deadlines. Schedule content in the Calendar.',
+    ai_card_s: 'Get ideas, hooks, scripts and captions in seconds.', try_now: 'Try it now', connect_ai: 'Connect AI',
+    this_month: 'This month', published_n: 'Published {a}/{b}', all_published: 'All published!', n_left: '{n} still to publish', none_this_month: 'Nothing scheduled this month', check: 'Check',
+    next_up: 'Next up', open: 'Open', reschedule: 'Reschedule', no_next: 'Nothing scheduled yet.',
+    cal_sub: 'Drag content to another date to reschedule.', board_sub: 'Drag cards to change their status.'
   },
   ms: {
     langName: 'Bahasa Melayu',
@@ -97,6 +119,17 @@ window.I18N = {
     welcome_title: 'Selamat datang ke KontenPlan', welcome_sub: 'Supaya pasukan boleh bekerja bersama, pilih folder dikongsi dan isi nama anda dahulu.', start: 'Mula',
     conflict: 'Kandungan ini baru sahaja diubah oleh {name}. Tulis ganti dengan versi anda?', conflict_overwrite: 'Tulis ganti', conflict_reload: 'Muat versi terkini',
     synced: 'Data dikemas kini daripada pasukan', updated_by: 'Diubah oleh', empty: 'Belum ada kandungan. Klik "Kandungan baharu" untuk mula.',
-    unassigned: 'Tiada PIC', untitled: 'Tiada tajuk', items_count: '{n} kandungan'
+    unassigned: 'Tiada PIC', untitled: 'Tiada tajuk', items_count: '{n} kandungan',
+    nav_dashboard: 'Papan Pemuka', theme_light: 'Cerah', theme_dark: 'Gelap', export_data: 'Eksport data', export: 'Eksport', notifications: 'Pemberitahuan',
+    hello: 'Hai, {name}!', hello_anon: 'Hai!', hero_q: 'Apa rancangan kandungan anda hari ini?', hero_sub: 'Rancang, hasilkan dan jadualkan video & poster bersama pasukan di satu tempat.',
+    feat_video_t: 'Video baharu', feat_video_s: 'Skrip & papan cerita', feat_poster_t: 'Poster baharu', feat_poster_s: 'Brief & reka bentuk', feat_ai_t: 'Idea daripada AI', feat_ai_s: 'Biar AI sumbang saran',
+    activity: 'Aktiviti pasukan', mark_read: 'Tanda dibaca', mark_all_read: 'Tanda semua dibaca', no_activity: 'Belum ada aktiviti.', edited: 'mengubah',
+    my_tasks: 'Tugasan saya', no_tasks: 'Belum ada kandungan ditugaskan kepada anda.', more_tasks: '+{n} tugasan lagi', see_all: 'Lihat semua',
+    overdue: 'Lewat', tomorrow: 'Esok', no_schedule_day: 'Tiada jadual pada tarikh ini.', schedule_one: 'Jadualkan kandungan',
+    deadlines: 'Tarikh akhir terdekat', no_deadlines: 'Tiada tarikh akhir. Jadualkan kandungan di Kalendar.',
+    ai_card_s: 'Dapatkan idea, hook, skrip dan kapsyen dalam beberapa saat.', try_now: 'Cuba sekarang', connect_ai: 'Sambungkan AI',
+    this_month: 'Bulan ini', published_n: 'Diterbitkan {a}/{b}', all_published: 'Semua sudah diterbitkan!', n_left: '{n} belum diterbitkan', none_this_month: 'Tiada jadual bulan ini', check: 'Semak',
+    next_up: 'Kandungan seterusnya', open: 'Buka', reschedule: 'Jadual semula', no_next: 'Belum ada kandungan dijadualkan.',
+    cal_sub: 'Seret kandungan ke tarikh lain untuk menjadual semula.', board_sub: 'Seret kad untuk menukar status.'
   }
 };

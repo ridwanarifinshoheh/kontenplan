@@ -4,6 +4,8 @@ Aplikasi desktop (Windows & macOS) untuk tim yang merencanakan konten **video** 
 
 ## Fitur
 
+- **Dashboard**: aktivitas tim, tugas saya, agenda minggu ini, tenggat terdekat, progres terbit bulan ini, dan konten berikutnya.
+- **Mode terang & gelap**: tombol di kanan atas, tersimpan per komputer.
 - **Kalender konten**: tampilan bulanan. Geser (drag) konten ke tanggal lain untuk menjadwal ulang.
 - **Papan Kanban**: Ide → Script/Brief → Produksi → Editing → Review → Terjadwal → Terbit. Geser kartu untuk mengubah status.
 - **Script & storyboard video**: rasio, durasi target, hook, daftar scene (visual, voice-over, durasi, catatan), CTA.
@@ -82,9 +84,10 @@ Ubah `"version"` di `package.json`, lalu build ulang.
 main.js          proses utama Electron: file, folder tim, AI, ekspor
 preload.js       jembatan aman antara tampilan dan sistem
 src/index.html   halaman aplikasi
-src/app.js       seluruh tampilan & logika (kalender, papan, editor, AI, pengaturan)
+src/app.js       seluruh tampilan & logika (dashboard, kalender, papan, editor, AI, pengaturan)
 src/i18n.js      teks 3 bahasa
-src/styles.css   desain
+src/styles.css   desain (warna tema terang/gelap ada di bagian :root)
+src/fonts/       font Plus Jakarta Sans (lisensi SIL OFL, lihat OFL.txt)
 src/mock-api.js  data contoh, untuk membuka src/index.html langsung di browser sebagai pratinjau
 build/icon.png   ikon aplikasi (1024×1024)
 .github/workflows/build.yml   build otomatis .exe & .dmg

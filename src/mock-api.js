@@ -3,27 +3,31 @@
 (() => {
   if (window.api) return;
   const ok = (data) => Promise.resolve({ ok: true, data });
-  const LS = 'kontenplan-demo';
+  const LS = 'kontenplan-demo-v2';
   const now = new Date();
-  const d = (day) => `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+  // tanggal relatif terhadap hari ini (0 = hari ini, -1 = kemarin, dst.)
+  const d = (off) => { const x = new Date(now.getFullYear(), now.getMonth(), now.getDate() + off); return `${x.getFullYear()}-${String(x.getMonth() + 1).padStart(2, '0')}-${String(x.getDate()).padStart(2, '0')}`; };
+  const hoursAgo = (h) => new Date(now.getTime() - h * 3600e3).toISOString();
   const sample = [
-    { id: 'a1', type: 'video', title: '3 kesalahan seduh kopi di rumah', platform: 'TikTok', status: 'script', publishDate: d(4), assignee: 'Rina',
+    { id: 'a1', type: 'video', title: '3 kesalahan seduh kopi di rumah', platform: 'TikTok', status: 'script', publishDate: d(0), assignee: 'Rina', updatedBy: 'Dimas', updatedAt: hoursAgo(0.3), notes: 'Ambil footage di bar depan, pagi hari biar cahayanya bagus.',
       video: { ratio: '9:16', duration: 30, hook: 'Kopi kamu pahit? Bisa jadi gara-gara ini.', cta: 'Follow buat tips seduh lainnya', scenes: [
         { id: 's1', visual: 'Close-up kopi tumpah dari V60, ekspresi kecewa', audio: 'Kopi kamu pahit? Bisa jadi gara-gara ini.', duration: 3, notes: 'Teks: "Kesalahan #1"' },
         { id: 's2', visual: 'Termometer di air mendidih', audio: 'Pertama, air terlalu panas. Idealnya 90–96 derajat.', duration: 7, notes: '' },
         { id: 's3', visual: 'Gilingan kasar vs halus side-by-side', audio: 'Kedua, gilingan terlalu halus bikin over-ekstraksi.', duration: 8, notes: 'B-roll grinder' } ] } },
-    { id: 'a2', type: 'poster', title: 'Promo Kopi Susu Gula Aren 1+1', platform: 'Instagram Feed', status: 'production', publishDate: d(7), assignee: 'Dimas',
+    { id: 'a2', type: 'poster', title: 'Promo Kopi Susu Gula Aren 1+1', platform: 'Instagram Feed', status: 'production', publishDate: d(2), assignee: 'Dimas', updatedBy: 'Arif', updatedAt: hoursAgo(2), notes: 'Tim, warna gula aren-nya tolong dibuat lebih hangat ya.',
       poster: { size: '1080x1350', purpose: 'Naikkan penjualan hari kerja', audience: 'Pekerja kantor 22–35', message: 'Beli 1 gratis 1 setiap Senin', headline: 'Senin Lebih Manis', subheadline: 'Beli 1 gratis 1 Kopi Susu Gula Aren', body: '', cta: 'Tunjukkan poster ini di kasir', colors: ['#3b2417', '#c8813a', '#f6ead8', '#1d1b20'], fonts: 'Heading: Fraunces, Body: Inter', moodboard: [] } },
-    { id: 'a3', type: 'video', title: 'Behind the scene: roasting batch pertama', platform: 'Instagram Reels', status: 'idea', publishDate: d(12), assignee: 'Rina' },
-    { id: 'a4', type: 'video', title: 'Review jujur menu baru', platform: 'YouTube Shorts', status: 'editing', publishDate: d(15), assignee: 'Arif' },
-    { id: 'a5', type: 'poster', title: 'Jadwal live music akhir bulan', platform: 'Instagram Story', status: 'review', publishDate: d(19), assignee: 'Dimas' },
-    { id: 'a6', type: 'video', title: 'Day in the life barista', platform: 'TikTok', status: 'scheduled', publishDate: d(22), assignee: 'Arif' },
-    { id: 'a7', type: 'poster', title: 'Lowongan barista part-time', platform: 'Instagram Feed', status: 'published', publishDate: d(2), assignee: 'Rina' },
-    { id: 'a8', type: 'video', title: 'Tebak harga biji kopi', platform: 'TikTok', status: 'idea', publishDate: '', assignee: '' },
-    { id: 'a9', type: 'poster', title: 'Menu musim hujan', platform: 'Instagram Feed', status: 'idea', publishDate: '', assignee: 'Dimas' }
-  ].map((x) => ({ ...x, updatedAt: new Date().toISOString(), updatedBy: x.assignee }));
+    { id: 'a3', type: 'video', title: 'Behind the scene: roasting batch pertama', platform: 'Instagram Reels', status: 'idea', publishDate: d(5), assignee: 'Rina', updatedBy: 'Rina', updatedAt: hoursAgo(20) },
+    { id: 'a4', type: 'video', title: 'Review jujur menu baru', platform: 'YouTube Shorts', status: 'editing', publishDate: d(1), assignee: 'Rina', updatedBy: 'Arif', updatedAt: hoursAgo(5) },
+    { id: 'a5', type: 'poster', title: 'Jadwal live music akhir pekan', platform: 'Instagram Story', status: 'review', publishDate: d(-1), assignee: 'Dimas', updatedBy: 'Arif', updatedAt: hoursAgo(30) },
+    { id: 'a6', type: 'video', title: 'Day in the life barista', platform: 'TikTok', status: 'scheduled', publishDate: d(3), assignee: 'Arif', updatedBy: 'Arif', updatedAt: hoursAgo(48) },
+    { id: 'a7', type: 'poster', title: 'Lowongan barista part-time', platform: 'Instagram Feed', status: 'published', publishDate: d(-6), assignee: 'Rina', updatedBy: 'Rina', updatedAt: hoursAgo(100) },
+    { id: 'a8', type: 'video', title: 'Tebak harga biji kopi', platform: 'TikTok', status: 'idea', publishDate: '', assignee: '', updatedBy: 'Rina', updatedAt: hoursAgo(120) },
+    { id: 'a9', type: 'poster', title: 'Menu musim hujan', platform: 'Instagram Feed', status: 'idea', publishDate: '', assignee: 'Dimas', updatedBy: 'Dimas', updatedAt: hoursAgo(130) },
+    { id: 'a10', type: 'video', title: 'Tutorial latte art untuk pemula', platform: 'Instagram Reels', status: 'published', publishDate: d(-3), assignee: 'Arif', updatedBy: 'Arif', updatedAt: hoursAgo(70) },
+    { id: 'a11', type: 'poster', title: 'Promo payday akhir bulan', platform: 'Instagram Story', status: 'scheduled', publishDate: d(8), assignee: 'Rina', updatedBy: 'Rina', updatedAt: hoursAgo(60) }
+  ];
   const load = () => { try { return JSON.parse(localStorage.getItem(LS)); } catch (_) { return null; } };
-  let db = load() || { settings: { language: 'id', userName: 'Rina', dataFolder: '/Google Drive/Tim Konten', ai: { provider: 'gemini', models: { anthropic: 'claude-sonnet-5-5', openai: 'gpt-5-mini', gemini: 'gemini-2.5-flash' }, keys: { anthropic: '', openai: '', gemini: 'demo' } } }, items: sample };
+  let db = load() || { settings: { language: 'id', theme: 'light', userName: 'Rina', dataFolder: '/Google Drive/Tim Konten', ai: { provider: 'gemini', models: { anthropic: 'claude-sonnet-5-5', openai: 'gpt-5-mini', gemini: 'gemini-2.5-flash' }, keys: { anthropic: '', openai: '', gemini: 'demo' } } }, items: sample };
   const persist = () => { try { localStorage.setItem(LS, JSON.stringify(db)); } catch (_) {} };
 
   const demoAI = (prompt) => {

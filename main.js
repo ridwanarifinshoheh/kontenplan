@@ -18,6 +18,7 @@ const settingsPath = () => path.join(app.getPath('userData'), 'settings.json');
 
 const DEFAULT_SETTINGS = {
   language: 'id',
+  theme: 'light',
   userName: '',
   dataFolder: '',
   ai: {
@@ -210,7 +211,7 @@ function createWindow() {
     minWidth: 1024,
     minHeight: 680,
     title: 'KontenPlan',
-    backgroundColor: '#f6f5f2',
+    backgroundColor: readSettings().theme === 'dark' ? '#111120' : '#f5f5fb',
     icon: path.join(__dirname, 'build', 'icon.png'),
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
